@@ -1,0 +1,194 @@
+{% extends "admin/base_site.html" %}
+{% load i18n grp_tags %}
+
+{% block bodyclass %}grp-login{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+	<!--<div class="g-d-c g-d-10 g-centered">
+        <div class="grp-module grp-module-login">
+            <h1>
+                <span class="grp-admin-title"><a href="{% url 'admin:index' %}">{% if grappelli_admin_title %}{{ grappelli_admin_title }}{% else %}{% get_admin_title %}{% endif %}</a></span>
+                <span class="grp-current-page">{{ title }}</span>
+            </h1>
+            <div class="grp-module">
+                <div class="grp-row">
+                    <p class="grp-description"><a href="{% url 'admin:index' %}"><strong>{% trans 'Log in again' %}</strong></a></p>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    {% load static %}
+    <style>
+        /* Contenedor Articulo*/
+        .articles{
+            padding: -20px;
+            background-image: url({% static "grappelli/img/background/IMAGEN.jpg" %});
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: center;
+            background-size: cover;
+            width: 65%;
+            height: 702px;
+            float:left;
+        }
+        .article-content{
+            background-color: rgba(47, 156, 139 , 0.);
+            width: 100%;
+            height: 100%
+        }
+
+        /*Edit Grapelli class*/
+        #grp-content{
+            padding: 0px;
+        }
+        body.grp-login #grp-content {
+            top: 0px;
+        }
+        
+        .pos-a {
+            position: absolute!important;
+        }
+
+        .bgc-white, .bgcH-white:hover {
+            background-color: rgba(255,255,255,0.4)!important;
+        }
+
+        .centerXY {
+            top: 50%;
+            left: 33%;
+            -webkit-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+        }
+
+        .bdrs-50p {
+            border-radius: 50%!important;
+        }
+        /* Container Login */
+        .login-1{
+            float:left;
+            background-color: #fff;
+            width: 35%;
+            height: 640px;
+        }
+
+        .container-log{
+            padding: 40px;
+            padding-top: 100px;
+        }
+        
+        .form-cont{
+            width: 100% !important;
+            padding: 10px;
+        }
+
+        .titulo-log{
+            background-image: url(http://www.buho.media/static/img/main/header-logo.svg);
+            width: 180px;
+            height: 95px;
+            background-repeat: no-repeat;
+            background-position-y: center;
+            background-position-x: center;
+            margin: auto;
+            margin-bottom: 170px;
+        }
+
+        .form-row{
+            padding-top: 20px;
+        }
+        
+        .form-row input{
+            height: 37px !important;
+            line-height: 1.5;
+            margin-top: 8px;
+            font-family: Roboto,-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Arial,sans-serif;
+        }
+
+        .form-row label{
+            font-size: 14px;
+            padding-bottom: 10px;
+        }
+
+        .btn-success{
+            background-color: #0c7cd5 !important;
+            width: 100px;
+            padding: 10px;
+            height: 40px;
+        }
+
+        @media(min-width: 900px){
+            .articles{
+                height: 702px !important;
+            }
+        }
+
+        @media(max-width: 700px){
+            .login-1{
+                width: 100%;
+            }
+            .articles{
+                width: 0%;
+            }
+
+            .bgc-white{
+                display: none;
+            }
+        }
+        .grp-row{
+            text-align: center;
+        }
+
+        .grp-description{
+            font-size: 25px !important;
+        }
+    
+        .grp-description a{
+            color: rebeccapurple !important;
+            text-decoration: underline;
+        }
+
+        .g-d-c.g-centered, .g-centered.g-all-c{
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .grp-current-page{
+            color: blue !important;
+            font-size: 20px;
+        }
+
+    </style>
+    <div class="contener-1">
+        <div class="articles">
+            <div class="article-content">
+                <div class="pos-a centerXY">
+                    <div class="bgc-white bdrs-50p pos-r" style="width:110px;height:110px;text-align:center; padding:15px; ">
+                        <img src="{% static "grappelli/img/admin/Integrity-13.png" %}" alt="" width="110">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="login-1">
+            <div class="container-log">
+                <div class="titulo-log">
+    
+                </div>
+                <div class="g-d-c g-d-10 g-centered">
+                    <!--<span class="grp-admin-title"><a href="{% url 'admin:index' %}">{% if grappelli_admin_title %}{{ grappelli_admin_title }}{% else %}{% get_admin_title %}{% endif %}</a></span>-->
+                <span class="grp-current-page">{{ title }}</span>
+                </div>
+                <div class="g-d-c g-d-10 g-centered">
+                    <div >
+                        <div>
+                            <div class="grp-row">
+                                <p class="grp-description"><a href="{% url 'admin:index' %}"><strong>{% trans 'Log in again' %}</strong></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
